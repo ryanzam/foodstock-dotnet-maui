@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodStockAPI", "FoodStockAPI\FoodStockAPI.csproj", "{8DA2EAF8-7E28-473B-B815-6CA432CD24C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DA2EAF8-7E28-473B-B815-6CA432CD24C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DA2EAF8-7E28-473B-B815-6CA432CD24C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DA2EAF8-7E28-473B-B815-6CA432CD24C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DA2EAF8-7E28-473B-B815-6CA432CD24C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3C0AE72-8714-455A-8339-AF21ED54FA79}
+	EndGlobalSection
+EndGlobal
