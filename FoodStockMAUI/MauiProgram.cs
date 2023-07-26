@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using FoodStockMAUI.Services;
+using Microsoft.Extensions.Logging;
 
 namespace FoodStockMAUI
 {
@@ -15,8 +16,10 @@ namespace FoodStockMAUI
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<IFoodStockService, FoodStockService>();
+
 #if DEBUG
-		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
