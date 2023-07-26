@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "cCnqqydNw9LCzyoMZOcc9UWA/Kh3zp3XenNErQ2F2vA=",
+  "Source": "FoodStockAPI",
+  "BasePath": "_content/FoodStockAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

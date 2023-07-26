@@ -1,34 +1,64 @@
+using FoodStockAPI.Data;
+using FoodStockAPI.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlite(builder.Configuration.GetConnectionString("SqliteConn")));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+//app.UseHttpsRedirection();
 
-app.UseHttpsRedirection();
-
-var summaries = new[]
+app.MapGet("api/foodstock", async (AppDbContext ctx) =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+    var foods = await ctx.FoodStocks.ToListAsync();
+    return Results.Ok(foods);
+});
 
-app.MapGet("/weatherforecast", () =>
+app.MapGet("api/foodstock/{id}", async (AppDbContext ctx, int id) =>
 {
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
+    var food = await ctx.FoodStocks.FirstOrDefaultAsync(f => f.Id == id);
+
+    if (food == null)
+        return Results.NotFound();
+
+    return Results.Ok(food);
+});
+
+app.MapPost("api/foodstock", async (AppDbContext ctx, FoodStock food) =>
+{
+    await ctx.FoodStocks.AddAsync(food);
+    await ctx.SaveChangesAsync();
+    return Results.Created($"api/foodstock/{food.Id}", food);
+});
+
+app.MapPut("api/foodstock/{id}", async (AppDbContext ctx, int id, FoodStock food) =>
+{
+    var foodItem = await ctx.FoodStocks.FirstOrDefaultAsync(f => f.Id == id);
+
+    if (foodItem == null)
+        return Results.NotFound();
+
+    foodItem.Name = food.Name;
+    foodItem.Left = food.Left;
+    await ctx.SaveChangesAsync();
+
+    return Results.NoContent();
+});
+
+app.MapDelete("api/foodstock/{id}", async (AppDbContext ctx, int id) =>
+{
+    var foodItem = await ctx.FoodStocks.FirstOrDefaultAsync(f => f.Id == id);
+
+    if (foodItem == null)
+        return Results.NotFound();
+
+    ctx.FoodStocks.Remove(foodItem);
+    await ctx.SaveChangesAsync();
+
+    return Results.NoContent();
 });
 
 app.Run();
 
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

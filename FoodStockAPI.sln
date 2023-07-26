@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodStockAPI", "FoodStockAPI\FoodStockAPI.csproj", "{8DA2EAF8-7E28-473B-B815-6CA432CD24C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodStockAPI", "FoodStockAPI\FoodStockAPI.csproj", "{8DA2EAF8-7E28-473B-B815-6CA432CD24C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodStockMAUI", "FoodStockMAUI\FoodStockMAUI.csproj", "{11202E94-211D-414A-8D45-AB6F03F63A38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,12 @@ Global
 		{8DA2EAF8-7E28-473B-B815-6CA432CD24C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DA2EAF8-7E28-473B-B815-6CA432CD24C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DA2EAF8-7E28-473B-B815-6CA432CD24C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11202E94-211D-414A-8D45-AB6F03F63A38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11202E94-211D-414A-8D45-AB6F03F63A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11202E94-211D-414A-8D45-AB6F03F63A38}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{11202E94-211D-414A-8D45-AB6F03F63A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11202E94-211D-414A-8D45-AB6F03F63A38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11202E94-211D-414A-8D45-AB6F03F63A38}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

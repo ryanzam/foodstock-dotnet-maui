@@ -1,0 +1,1 @@
+C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\FoodStockMAUI.csproj;x64
