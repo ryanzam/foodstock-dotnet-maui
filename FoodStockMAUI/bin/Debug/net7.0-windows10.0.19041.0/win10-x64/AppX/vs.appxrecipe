@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-07-26T08:57:13.136</Modified>
+      <Modified>2023-07-26T17:47:29.336</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-07-26T08:57:12.424</Modified>
+      <Modified>2023-07-26T17:36:24.768</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\FoodStockMAUI.runtimeconfig.json">
       <PackagePath>FoodStockMAUI.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\FoodStockMAUI.dll">
       <PackagePath>FoodStockMAUI.dll</PackagePath>
-      <Modified>2023-07-26T08:57:07.398</Modified>
+      <Modified>2023-07-26T17:47:27.313</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>FoodStockMAUI.exe</PackagePath>
-      <Modified>2023-07-26T08:57:07.478</Modified>
+      <Modified>2023-07-26T17:47:27.376</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ranjam.alee\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.9\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -920,7 +920,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\FoodStockMAUI.deps.json">
       <PackagePath>FoodStockMAUI.deps.json</PackagePath>
-      <Modified>2023-07-26T08:57:12.844</Modified>
+      <Modified>2023-07-26T17:47:29.072</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\7.0.86\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

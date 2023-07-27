@@ -1,24 +1,45 @@
-﻿namespace FoodStockMAUI
+﻿using FoodStockMAUI.Models;
+using FoodStockMAUI.Pages;
+using FoodStockMAUI.Services;
+using System.Diagnostics;
+
+namespace FoodStockMAUI
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
+        public IFoodStockService Service { get; }
 
-        public MainPage()
+        public MainPage(IFoodStockService stockService)
         {
             InitializeComponent();
+            Service = stockService;
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        protected async override void OnAppearing()
         {
-            count++;
+            base.OnAppearing();
+            collectionView.ItemsSource = await Service.GetFoodStocks();
+            Debug.WriteLine("on Appearing");
+        }
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+        async void OnAddFood(object sender, EventArgs e)
+        {
+            var navParam = new Dictionary<string, object>
+            {
+                {nameof(FoodStock), new FoodStock() }
+            };
+            await Shell.Current.GoToAsync(nameof(HandleStock), navParam);
+            Debug.WriteLine("onAddFood clicked");
+        }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+        async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var navParam = new Dictionary<string, object>
+            {
+                {nameof(FoodStock), e.CurrentSelection.FirstOrDefault() as FoodStock }
+            };
+            await Shell.Current.GoToAsync(nameof(HandleStock), navParam);
+            Debug.WriteLine("onSelectionChanged clicked");
         }
     }
 }

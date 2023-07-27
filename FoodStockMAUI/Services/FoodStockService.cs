@@ -14,7 +14,7 @@ namespace FoodStockMAUI.Services
         public FoodStockService()
         {
             HttpClient = new HttpClient();
-            BaseAddr = DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5209" : "http://localhost:5223";
+            BaseAddr = DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5223" : "http://localhost:5223";
             Url = BaseAddr + "/api/foodstock";
             JsonSerializerOpts = new JsonSerializerOptions
             {
@@ -23,6 +23,7 @@ namespace FoodStockMAUI.Services
         }
 
         public async Task<List<FoodStock>> GetFoodStocks()
+
         {
             List<FoodStock> foodStocks = new();
 
@@ -89,7 +90,7 @@ namespace FoodStockMAUI.Services
             try
             {
                 string jsonFoodStock = JsonSerializer.Serialize<FoodStock>(food, JsonSerializerOpts);
-                StringContent stringContent = new StringContent(jsonFoodStock);
+                StringContent stringContent = new StringContent(jsonFoodStock, System.Text.Encoding.UTF8, "application/json");
 
                 HttpResponseMessage response = await HttpClient.PostAsync(Url, stringContent);
                 if (response.IsSuccessStatusCode)
@@ -117,7 +118,7 @@ namespace FoodStockMAUI.Services
             try
             {
                 string jsonFoodStock = JsonSerializer.Serialize<FoodStock>(food, JsonSerializerOpts);
-                StringContent stringContent = new StringContent(jsonFoodStock);
+                StringContent stringContent = new StringContent(jsonFoodStock, System.Text.Encoding.UTF8, "application/json");
 
                 HttpResponseMessage response = await HttpClient.PutAsync($"{Url}/{food.Id}", stringContent);
                 if (response.IsSuccessStatusCode)

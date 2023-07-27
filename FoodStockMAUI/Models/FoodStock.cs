@@ -9,25 +9,25 @@ namespace FoodStockMAUI.Models
         int _id;
         public int Id
         {
-            get { return _id; }
+            get => _id;
             set
             {
                 if (_id == value) return;
 
                 _id = value;
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Id"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Id)));
             }
         }
 
         string _name;
         public string Name
         {
-            get { return _name; }
+            get => _name;
             set
             {
                 if (_name == value) return;
                 _name = value;
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Name"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Name)));
             }
         }
 
@@ -39,7 +39,7 @@ namespace FoodStockMAUI.Models
             {
                 if (_left == value) return;
                 _left = value;
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs("Left"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Left)));
             }
         }
     }

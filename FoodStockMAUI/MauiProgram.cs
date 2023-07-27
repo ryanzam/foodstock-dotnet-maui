@@ -1,4 +1,5 @@
-﻿using FoodStockMAUI.Services;
+﻿using FoodStockMAUI.Pages;
+using FoodStockMAUI.Services;
 using Microsoft.Extensions.Logging;
 
 namespace FoodStockMAUI
@@ -17,6 +18,8 @@ namespace FoodStockMAUI
                 });
 
             builder.Services.AddSingleton<IFoodStockService, FoodStockService>();
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddTransient<HandleStock>();
 
 #if DEBUG
             builder.Logging.AddDebug();
