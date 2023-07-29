@@ -11,9 +11,9 @@ namespace FoodStockMAUI.Services
         private readonly string Url;
         private readonly JsonSerializerOptions JsonSerializerOpts;
 
-        public FoodStockService()
+        public FoodStockService(HttpClient httpClient)
         {
-            HttpClient = new HttpClient();
+            HttpClient = httpClient;
             BaseAddr = DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5223" : "http://localhost:5223";
             Url = BaseAddr + "/api/foodstock";
             JsonSerializerOpts = new JsonSerializerOptions

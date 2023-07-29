@@ -1,3 +1,4 @@
+using CommunityToolkit.Maui.Alerts;
 using FoodStockMAUI.Models;
 using FoodStockMAUI.Services;
 
@@ -44,12 +45,16 @@ public partial class HandleStock : ContentPage
             await Service.UpdateFood(FoodStock);
         }
         await Shell.Current.GoToAsync("..");
+        var toast = Toast.Make($"{FoodStock.Name} saved.", CommunityToolkit.Maui.Core.ToastDuration.Long, 20);
+        await toast.Show();
     }
 
     async void OnDelete(object sender, EventArgs e)
     {
         await Service.DeleteFood(FoodStock.Id);
         await Shell.Current.GoToAsync("..");
+        var toast = Toast.Make($"{FoodStock.Name} deleted.", CommunityToolkit.Maui.Core.ToastDuration.Long, 20);
+        await toast.Show();
     }
 
     async void OnCancel(object sender, EventArgs e)

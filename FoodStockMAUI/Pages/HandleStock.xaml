@@ -2,32 +2,30 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FoodStockMAUI.Pages.HandleStock"
-             Title="FoodsStock">
-    
+             Title="FoodsStock"
+             BackgroundColor="FloralWhite">
+
     <ContentPage.Resources>
-        <Style TargetType="Entry">
-            <Setter Property="Margin" Value="10,0,10,0"/>
-        </Style>
         <Style TargetType="Button">
-            <Setter Property="Margin" Value="10,10,20,0"/>
+            <Setter Property="Margin" Value="10,0,10,20"/>
         </Style>
     </ContentPage.Resources>
 
     <Grid RowDefinitions="*,Auto" ColumnDefinitions="*,*,*" ColumnSpacing="5">
-        <TableView Intent="Data" Grid.Row="0" Grid.Column="3">
+        <TableView Intent="Data" Grid.Row="0" Grid.ColumnSpan="3">
             <TableRoot>
-                <TableSection Title="Enter food">
+                <TableSection Title="Enter food on stock">
                     <EntryCell Text="{Binding Path=FoodStock.Name}"
-                        Placeholder="Enter food to add" />
+                        Placeholder="Enter food to save" />
                 </TableSection>
-                <TableSection Title="Enter food">
+                <TableSection Title="Enter number on stock">
                     <EntryCell Text="{Binding Path=FoodStock.Left}"
                         Placeholder="Enter remaining food number" />
                 </TableSection>
             </TableRoot>
         </TableView>
-        <Button Text="Save" Clicked="OnAdd" />
-        <Button Text="Delete" Clicked="OnDelete" />
-        <Button Text="Cancel" Clicked="OnCancel" />
+        <Button Grid.Row="1" Grid.Column="0" Text="Save" Clicked="OnAdd" BackgroundColor="Green"/>
+        <Button Grid.Row="1" Grid.Column="1" Text="Delete" Clicked="OnDelete" BackgroundColor="Crimson"/>
+        <Button Grid.Row="1" Grid.Column="2" Text="Cancel" Clicked="OnCancel" BackgroundColor="Gray"/>
     </Grid>
 </ContentPage>

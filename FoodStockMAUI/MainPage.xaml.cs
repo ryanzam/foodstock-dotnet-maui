@@ -1,7 +1,6 @@
 ﻿using FoodStockMAUI.Models;
 using FoodStockMAUI.Pages;
 using FoodStockMAUI.Services;
-using System.Diagnostics;
 
 namespace FoodStockMAUI
 {
@@ -19,7 +18,6 @@ namespace FoodStockMAUI
         {
             base.OnAppearing();
             collectionView.ItemsSource = await Service.GetFoodStocks();
-            Debug.WriteLine("on Appearing");
         }
 
         async void OnAddFood(object sender, EventArgs e)
@@ -29,7 +27,6 @@ namespace FoodStockMAUI
                 {nameof(FoodStock), new FoodStock() }
             };
             await Shell.Current.GoToAsync(nameof(HandleStock), navParam);
-            Debug.WriteLine("onAddFood clicked");
         }
 
         async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -39,7 +36,6 @@ namespace FoodStockMAUI
                 {nameof(FoodStock), e.CurrentSelection.FirstOrDefault() as FoodStock }
             };
             await Shell.Current.GoToAsync(nameof(HandleStock), navParam);
-            Debug.WriteLine("onSelectionChanged clicked");
         }
     }
 }

@@ -267,3 +267,7 @@ C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\obj\Debug
 C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\obj\Debug\net7.0-ios\iossimulator-x64\FoodStockMAUI.pdb
 C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\obj\Debug\net7.0-ios\iossimulator-x64\FoodStockMAUI.genruntimeconfig.cache
 C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\obj\Debug\net7.0-ios\iossimulator-x64\ref\FoodStockMAUI.dll
+C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\bin\Debug\net7.0-ios\iossimulator-x64\CommunityToolkit.Maui.dll
+C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\bin\Debug\net7.0-ios\iossimulator-x64\CommunityToolkit.Maui.Core.dll
+C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\bin\Debug\net7.0-ios\iossimulator-x64\Microsoft.Extensions.Http.dll
+C:\Users\ranjam.alee\source\MyPersonalRepos\FoodStockAPI\FoodStockMAUI\obj\Debug\net7.0-ios\iossimulator-x64\build-signature\signature
