@@ -3,40 +3,87 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FoodStockMAUI.MainPage"
              Title="FoodsStock"
-             BackgroundColor="FloralWhite">
+             BackgroundColor="{StaticResource Gray900}">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add Food" Clicked="OnAddFood"/>
-    </ContentPage.ToolbarItems>
+    <Grid RowDefinitions=".1*,.5*,.1*,.2*,.1*" Margin="20,20,0,0">
 
-    <CollectionView x:Name="collectionView"
+        <Label Text="Your foods on stock" 
+                TextColor="{StaticResource Gray400}"
+                FontSize="20"
+               VerticalTextAlignment="Center"
+               HorizontalOptions="Start"
+                FontFamily="OpenSansSemibold"/>
+
+        <CollectionView x:Name="collectionView"
                     SelectionMode="Single"
-                    SelectionChanged="OnSelectionChanged">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Grid Padding="10">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="100" />
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" 
-                           Text="{Binding Name}"
-                           FontSize="Medium"/>
-                    <Label Grid.Column="1" 
-                           Text="{Binding Left}"
-                           FontSize="Medium"/>
+                    SelectionChanged="OnSelectionChanged"
+                    Grid.Row="1"
+                    BackgroundColor="{StaticResource Gray600}"
+                    Margin="0,0,20,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions=".7*,.3*" Padding="15,15,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Column="0" 
+                                Text="{Binding Name}"
+                                TextColor="{StaticResource Gray100}"
+                                FontSize="Medium"
+                               FontFamily="OpenSansSemibold"/>
+                        <Label Grid.Column="1" 
+                                Text="{Binding Left}"
+                                TextColor="{StaticResource Gray100}"
+                                FontSize="Medium"
+                               FontFamily="OpenSansRegular"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-                    <ActivityIndicator IsVisible="True"
-                                       IsRunning="True"
-                                       HorizontalOptions="FillAndExpand"
-                                       VerticalOptions="CenterAndExpand"
-                                       Grid.RowSpan="2"
-                                       Grid.ColumnSpan="2"/>
-                </Grid>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+        <Label Text="Almost finished foods" 
+               Grid.Row="2"
+                TextColor="{StaticResource Gray400}"
+                FontSize="20"
+               VerticalOptions="End"
+               HorizontalOptions="Start"
+               FontFamily="OpenSansSemibold"/>
+
+        <CollectionView x:Name="AlmostFinishedCV" Grid.Row="3" VerticalOptions="Start">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions=".8*,.2*" HeightRequest="50" VerticalOptions="Center">
+                        <RoundRectangle Grid.ColumnSpan="2" 
+                                        Fill="{StaticResource Gray600}" 
+                                        CornerRadius="40"
+                                        />
+                        <Label Text="{Binding Name}" 
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center"
+                               FontFamily="OpenSansSemibold"
+                               FontSize="15"
+                               TextColor="{StaticResource Gray100}"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+        <Border Grid.Row="4"
+                StrokeShape="RoundRectangle 50,0,0,50"
+                WidthRequest="250"
+                HeightRequest="80"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                StrokeThickness="0"
+                BackgroundColor="{StaticResource Primary}">
+            <Button Text="Add Food"
+                FontFamily="OpenSansSemibold" 
+                BackgroundColor="{StaticResource Primary}"
+                FontSize="20"
+                Clicked="OnAddFood"/>
+        </Border>
+    </Grid>
 </ContentPage>

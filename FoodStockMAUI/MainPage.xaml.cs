@@ -18,6 +18,7 @@ namespace FoodStockMAUI
         {
             base.OnAppearing();
             collectionView.ItemsSource = await Service.GetFoodStocks();
+            GetAlmostFinishedFoods();
         }
 
         async void OnAddFood(object sender, EventArgs e)
@@ -36,6 +37,12 @@ namespace FoodStockMAUI
                 {nameof(FoodStock), e.CurrentSelection.FirstOrDefault() as FoodStock }
             };
             await Shell.Current.GoToAsync(nameof(HandleStock), navParam);
+        }
+
+        async void GetAlmostFinishedFoods()
+        {
+            var foods = await Service.GetFoodStocks();
+            AlmostFinishedCV.ItemsSource = foods.Where(f => f.Left <= 2).ToList();
         }
     }
 }
